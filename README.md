@@ -68,7 +68,20 @@ In a web browser in Windows-VM, navigate to https://www.wireshark.org/download.h
 
 <img width="1278" height="715" alt="7" src="https://github.com/user-attachments/assets/a30f77b3-55f0-413f-b0ad-1ff3607bcc40" />
 
-Once installed, open Wireshark and start packet capture
+Once installed, open Wireshark and start packet capture. Select "Ethernet" then click the Shark Fin in the menu bar as shown below:
+
+<img width="428" height="371" alt="8" src="https://github.com/user-attachments/assets/55feac85-6ff0-4103-ba02-b24d82ff3494" />
+
+Observe rows of active traffic being displayed. This means there is communication occurring on the back end:
+
+<img width="973" height="637" alt="9" src="https://github.com/user-attachments/assets/0def5ad5-96cf-402d-8c14-a46dd73b2f99" />
+
+Filter for ICMP traffic and observe the change. Apply a display filter by typing "ICMP" and notice the change. The display window is blank as there are currently no packets using ICMP. 
+
+<img width="975" height="639" alt="10" src="https://github.com/user-attachments/assets/0349f65d-a73f-4f3f-ab44-e5eadee27738" />
+
+Ping uses ICMP. I will obtain the Linux-VM private IP address and ping it from within the Windows-VM and observe the traffic in Wireshark.
+
 
 
 
