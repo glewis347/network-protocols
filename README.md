@@ -17,8 +17,8 @@ You can view that project here:
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute services)
-- Remote Desktop
-- Various Command-Line Tools
+- Windows App (for remote connection)
+- Powershell
 - Different Network Protocols (SSH, RDP, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
 
