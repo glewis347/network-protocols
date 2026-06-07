@@ -10,15 +10,9 @@ In this project I will be using Wireshark to analyze network traffic between Azu
 
 ## 🔗 Related Project: Azure VM Setup
  
-The Virtual Machines used in this proj were deployed and configured in a previous project.
-
-You can view the full VM setup here:  
-👉 https://github.com/Ernanm280/azure-setup
-
-This includes:
-- Virtual Network (VNet) configuration
-- Windows 10 and Ubuntu VM deployment
-- Initial network connectivity setup
+The Virtual Machines used in this project were created and configured in a previous project. Two Virtual Machines (Windows-VM and Linux-VM) were created and setup within the same Resource Group and Virtual Network.
+You can view that project here:  
+👉 https://github.com/glewis347/azure-setup
 
 <h2>Environments and Technologies Used</h2>
 
