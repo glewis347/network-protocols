@@ -38,11 +38,40 @@ You can view that project here:
 
 ---
 
-**1. Observing ICMP Traffic**
+**1. Observe ICMP Traffic**
   
-For this part of the lab, I observed `ICMP` traffic using Wireshark on the Windows 10 virtual machine. I used Remote Desktop Protocol (`RDP`) from my local computer to connect to the Windows 10 VM within Azure.
+In the Azure platform, select "Virtual machines" in the menu on the left, then select "Windows-VM". Copy the Public IP address as shown in the image below. Ensure that the Virtual Machines are turned on within Azure before continuing.
 
-<img width="1898" height="788" alt="Screenshot 2026-02-24 185452" src="https://github.com/user-attachments/assets/d92f10d2-3ba4-427f-97ff-9a1f1e182b5e" />
+<img width="1713" height="858" alt="1" src="https://github.com/user-attachments/assets/81211ce2-9d05-41d3-9c51-f2f9da3bb91b" />
+
+Open the Windows app and select the "+" sign, then "Add PC":
+
+<img width="1268" height="437" alt="2" src="https://github.com/user-attachments/assets/e0108d10-9ea1-4f6b-92e1-db686d1d5dae" />
+
+In the "PC Name" field, enter the IP Address of the Windows VM. In the "Friendly name" field, enter "Windows-VM" then select "Add":
+
+<img width="1164" height="711" alt="image" src="https://github.com/user-attachments/assets/f7061d45-1437-41e2-a275-99357a493e1e" />
+
+Under "Saved Devices" double click the Window-VM tile and enter the login credentials for this VM. Select "Continue"
+
+<img width="1165" height="542" alt="image" src="https://github.com/user-attachments/assets/ef53e5c2-e642-449b-aeb2-ac67edf08a3e" />
+
+Select "Continue" again:
+
+<img width="1172" height="491" alt="image" src="https://github.com/user-attachments/assets/07f57d45-198f-49c3-8511-082a9e4d7fca" />
+
+You should now be able to see the desktop of the Windows VM as shown below:
+
+<img width="1279" height="718" alt="6" src="https://github.com/user-attachments/assets/99f13baf-3994-48bf-a94d-aaae44c7d37b" />
+
+In a web browser in Windows-VM, navigate to https://www.wireshark.org/download.html and download/install Wireshark in Windows-VM:
+
+<img width="1278" height="715" alt="7" src="https://github.com/user-attachments/assets/a30f77b3-55f0-413f-b0ad-1ff3607bcc40" />
+
+Once installed, open Wireshark and start packet capture
+
+
+
 
 <br>
 <br>
