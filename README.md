@@ -6,7 +6,7 @@
 
 ## Project Overview
  
-In this project I will be using Wireshark to analyze network traffic between Azure Virtual Machines. Wireshark is an open-source network protocol analyzer that inspects network traffic in real time. I will use this to inspect and observe data flowing across a network at the packet level using various protocols such as ICMP, SSH, DHCP, DNS, RDP. This will provide a good understanding of how the Virtual Machines communicate in the network. This project also entails working with Azure Network Security Groups (NSG) to manage and control network traffic.
+In this project I will be using Wireshark to analyze network traffic between Azure Virtual Machines. Wireshark is an open-source network protocol analyzer that inspects network traffic in real time. I will use this to inspect and observe data flowing across a network at the packet level using various protocols such as ICMP, SSH, DHCP, DNS, RDP. This will provide a good understanding of how Virtual Machines communicate in a network. This project also entails working with Azure Network Security Groups (NSG) to manage and control network traffic.
 
 ## 🔗 Related Project: Azure VM Setup
  
