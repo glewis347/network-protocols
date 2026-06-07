@@ -80,7 +80,11 @@ Filter for ICMP traffic and observe the change. Apply a display filter by typing
 
 <img width="975" height="639" alt="10" src="https://github.com/user-attachments/assets/0349f65d-a73f-4f3f-ab44-e5eadee27738" />
 
-Ping uses ICMP. I will obtain the Linux-VM private IP address and ping it from within the Windows-VM and observe the traffic in Wireshark.
+Ping uses ICMP. I will obtain the Linux-VM private IP address and ping it from within the Windows-VM and observe the traffic in Wireshark. To ping the Linux-VM we will use Powershell. The command line for this is "ping 10.0.0.5". Notice that the ping was successful as there were 4 packets sent and received, with 0% loss:
+
+<img width="855" height="292" alt="11" src="https://github.com/user-attachments/assets/4c49491f-0ae9-4508-921a-87dc327f6712" />
+
+
 
 
 
