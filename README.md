@@ -24,8 +24,8 @@ You can view that project here:
 
 <h2>Operating Systems Used </h2>
 
-- Windows 10 (21H2)
-- Ubuntu Server 20.04
+- Windows 10 (22H2)
+- Ubuntu Server 24.04
 
 <h2>Actions and Observations</h2>
 
