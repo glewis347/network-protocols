@@ -27,12 +27,14 @@ You can view that project here:
 - Windows 10 (22H2)
 - Ubuntu Server 24.04
 
-<h2>Actions and Observations</h2>
+<h2>High Level Steps</h2>
 
-- If using a Mac, install Microsoft Remote Desktop
-- Using RDP, connect to the Windows 10 VM.
-- Install [Wireshark](https://www.wireshark.org) within the Windows 10 VM.
-- Open Wireshark and start a packet capture.
+- Observe ICMP Traffic
+- Configure a Network Security Group
+- Observe SSH Traffic
+- Observe DHCP Traffic
+- Observe DNS Traffic
+- Observe RDP Traffic
 
 ---
 
