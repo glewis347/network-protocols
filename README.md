@@ -84,6 +84,17 @@ Ping uses ICMP. I will obtain the Linux-VM private IP address and ping it from w
 
 <img width="855" height="292" alt="11" src="https://github.com/user-attachments/assets/4c49491f-0ae9-4508-921a-87dc327f6712" />
 
+Now let us observe the traffic in Wireshark. Observe that for every packet that was sent, Wiresharks logs a request and a reply, creating 8 lines of observable ICMP traffic:
+
+<img width="1141" height="455" alt="12" src="https://github.com/user-attachments/assets/469fa172-f93a-4d47-8f0f-5f0ba623e9ea" />
+
+I will now ping a public website (www.google.com) and observe the results in Wireshark. Observe that each of the 8 lines of ICMP traffic has the IP address for www.google.com
+
+<img width="446" height="186" alt="13" src="https://github.com/user-attachments/assets/ba9f9d99-0a65-42e7-8a49-d35590675df8" />
+<img width="1141" height="463" alt="14" src="https://github.com/user-attachments/assets/b7039ed7-b500-4b4a-bd40-94b929dec137" />
+
+
+
 
 
 
