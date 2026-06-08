@@ -93,7 +93,12 @@ Ping a public website (www.google.com) and observe the results in Wireshark. Obs
 <img width="446" height="186" alt="13" src="https://github.com/user-attachments/assets/ba9f9d99-0a65-42e7-8a49-d35590675df8" />
 <img width="1141" height="463" alt="14" src="https://github.com/user-attachments/assets/b7039ed7-b500-4b4a-bd40-94b929dec137" />
 
-Configure the Linux-VM's Network Security Group to disable incoming (inbound) ICMP traffic.
+Ping the Linux-VM using a perpetual (non-stop) ping from the Windows-VM. In Powershell, enter the command "ping 10.0.0.5 -t". Observe the continuous lines of ICMP in Wireshark:
+
+<img width="452" height="532" alt="Screenshot 2026-06-08 at 12 00 58 PM" src="https://github.com/user-attachments/assets/7e96ad77-d04c-4c2e-958d-1b0abf6de080" />
+<img width="1145" height="488" alt="Screenshot 2026-06-08 at 12 03 19 PM" src="https://github.com/user-attachments/assets/e34eab38-f6b8-4879-ac8c-9df3497e1107" />
+
+Now configure the Linux-VM's Network Security Group to disable incoming (inbound) ICMP traffic.
 Within Azure's Virtual Machine page, select "Linux-VM" and in the menu on the left select "Networking" then "Network settings". Navigate to the Rules section and select "+ Create port rule" -> "Inbound port rule":
 
 <img width="1674" height="730" alt="1" src="https://github.com/user-attachments/assets/124ef52d-a727-42fd-90c3-48b706bf9129" />
@@ -110,6 +115,16 @@ Configure the rule to deny ICMP traffic with the below settings:
 Select "Add"
 
 <img width="577" height="814" alt="2" src="https://github.com/user-attachments/assets/e2e991bb-d245-40a7-a0b6-ee2afc64ab95" />
+
+All incoming ICMP traffic to the Linux-VM is now blocked. Observe what happens in Powershell and in Wireshark:
+In Powershell, there is now a message of "Request timed out." In Wireshark, each row of new traffic now says "request" and "no response found!". Contrast this with previous rows of traffic where we observed alternating rows of "request" and "reply", which is absent here as we disabled inbound ICMP traffic to the Linux-VM.
+
+<img width="857" height="400" alt="Screenshot 2026-06-08 at 12 06 10 PM" src="https://github.com/user-attachments/assets/b9d19f31-a788-475b-a3dc-b0038a882070" />
+<img width="1144" height="473" alt="Screenshot 2026-06-08 at 12 06 26 PM" src="https://github.com/user-attachments/assets/b382a839-9311-44f0-987c-97418760c4c8" />
+
+
+
+
 
 
 
