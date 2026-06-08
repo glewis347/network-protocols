@@ -38,7 +38,7 @@ You can view that project here:
 
 ---
 
-**1. Observe ICMP Traffic**
+**1. Observing ICMP Traffic**
   
 In the Azure platform, select "Virtual machines" in the menu on the left, then select "Windows-VM". Copy the Public IP address as shown in the image below. Ensure that the Virtual Machines are turned on within Azure before continuing.
 
@@ -98,6 +98,8 @@ Ping the Linux-VM using a perpetual (non-stop) ping from the Windows-VM. In Powe
 <img width="452" height="532" alt="Screenshot 2026-06-08 at 12 00 58 PM" src="https://github.com/user-attachments/assets/7e96ad77-d04c-4c2e-958d-1b0abf6de080" />
 <img width="1145" height="488" alt="Screenshot 2026-06-08 at 12 03 19 PM" src="https://github.com/user-attachments/assets/e34eab38-f6b8-4879-ac8c-9df3497e1107" />
 
+
+**2. Configuring a Network Security Group**
 Now configure the Linux-VM's Network Security Group to disable incoming (inbound) ICMP traffic.
 Within Azure's Virtual Machine page, select "Linux-VM" and in the menu on the left select "Networking" then "Network settings". Navigate to the Rules section and select "+ Create port rule" -> "Inbound port rule":
 
@@ -129,6 +131,7 @@ In Powershell, the perpetual pings have now resumed with a reply from the Linux-
 <img width="1141" height="378" alt="4" src="https://github.com/user-attachments/assets/24d749a2-7eb7-4642-b826-0661c14af9a8" />
 
 
+**3. Observing SSH Traffic**
 
 
 
@@ -138,27 +141,6 @@ In Powershell, the perpetual pings have now resumed with a reply from the Linux-
 
 
 
-**Re-enabling `ICMP` traffic (Allow Ping again)**
-
-1. Within Azure, go to Linux VM's Network Security Group
-2. Locate the DenyInbound (ICMP) rule
-3. Click the **delete** (trash icon) on the rule
-4. Confirm by selecting **Yes** in the prompt
-
-<img width="1490" height="576" alt="image" src="https://github.com/user-attachments/assets/0cc8f104-b0eb-459e-9a4b-233500259c2f" />
-
-<br>
-<br>
-
-**Result**: After re-enabling `ICMP`, I returned to the Windows 10 VM and observed that the ping replies resumed, and Wireshark showed reply packets being received again.
-
-> [!NOTE]
-> This shows how NSGs function as a firewall by controlling inbound and outbound traffic, directly affecting connectivity between networked systems.
-
-<img width="777" height="535" alt="image" src="https://github.com/user-attachments/assets/a5af13de-76ab-416c-b06b-df151b5c6501" />
-
-
----
 
 **3. Observing SSH Traffic**
 
