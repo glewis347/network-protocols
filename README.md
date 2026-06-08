@@ -116,12 +116,17 @@ Select "Add"
 
 <img width="577" height="814" alt="2" src="https://github.com/user-attachments/assets/e2e991bb-d245-40a7-a0b6-ee2afc64ab95" />
 
-All incoming ICMP traffic to the Linux-VM is now blocked. Observe what happens in Powershell and in Wireshark:
+All incoming ICMP traffic to the Linux-VM is now blocked. Observe what happens in Powershell and Wireshark:
 In Powershell, there is now a message of "Request timed out." In Wireshark, each row of new traffic now says "request" and "no response found!". Contrast this with previous rows of traffic where we observed alternating rows of "request" and "reply", which is absent here as we disabled inbound ICMP traffic to the Linux-VM.
 
 <img width="857" height="400" alt="Screenshot 2026-06-08 at 12 06 10 PM" src="https://github.com/user-attachments/assets/b9d19f31-a788-475b-a3dc-b0038a882070" />
 <img width="1144" height="473" alt="Screenshot 2026-06-08 at 12 06 26 PM" src="https://github.com/user-attachments/assets/b382a839-9311-44f0-987c-97418760c4c8" />
 
+Re-enable inbound ICMP traffic on the Linux-VM and observe what happens in Powershell and Wireshark:
+In Powershell, the perpetual pings have now resumed with a reply from the Linux-VM. In Wireshark, we are now observing alternating rows of "request" and "reply" as a result of enabling inbound ICMP traffic.
+
+<img width="853" height="385" alt="3" src="https://github.com/user-attachments/assets/6e59a649-de33-4d79-9e6a-12edb79011a9" />
+<img width="1141" height="378" alt="4" src="https://github.com/user-attachments/assets/24d749a2-7eb7-4642-b826-0661c14af9a8" />
 
 
 
@@ -130,44 +135,8 @@ In Powershell, there is now a message of "Request timed out." In Wireshark, each
 
 
 
-**2. Configuring a Firewall (Network Security Group)**
- 
-I initiated a continuous ping from the Windows 10 VM to the Ubuntu VM (Private IP address) using the `ping -t` command in PowerShell. This caused `ping` to run continuously, allowing me to analyze the traffic in real time in Wireshark.
 
-<img width="624" height="555" alt="image" src="https://github.com/user-attachments/assets/fc9719cf-d706-4871-8813-325d3d813736" />
 
-<br>
-<br>
-
-While the continuous ping was running, I configured the Network Security Group (NSG) associated with the Ubuntu VM to block inbound ICMP traffic.:
-
-1. Navigate to the Ubuntu VM in Azure
-2. Open **Network Settings**
-3. Select the associated NSG **(Linux-VM-nsg)**
-4. Click **+ Add inbound security rule**
-5. Configure the rule to deny ICMP traffic:
-- Source: Any
-- Destination: Any
-- Service: Custom
-- Destination Port:*
-- Protocol: ICMPv4
-- Action: Deny
-- Priority: 290
-- Name: DenyInbound.
-6. Click **Add**
-
-<img width="1794" height="1087" alt="image" src="https://github.com/user-attachments/assets/6f38a1a0-cb20-4205-83f8-6a2371de62d4" />
-
-<br>
-<br>
-
-> [!NOTE]
-> All inbound `ICMP` (ping) traffic to your Ubuntu VM is now blocked, so ping requests from your Windows 10 VM will fail
-
-<img width="877" height="548" alt="Screenshot 2026-02-24 193855" src="https://github.com/user-attachments/assets/76b693af-162f-46f1-aa03-07ab91a953f6" />
-
-<br>
-<br>
 
 **Re-enabling `ICMP` traffic (Allow Ping again)**
 
