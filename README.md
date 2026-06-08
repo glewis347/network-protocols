@@ -161,15 +161,6 @@ Using Powershell in Windows-VM, enter the command "nslookup www.google.com" to q
 
 
 **6. Observing RDP Traffic** 
-
-I returned to Wireshark and applied the filter `tcp.port == 3389` to view Remote Desktop Protocol `RDP` traffic. After applying the filter, I observed continuous network traffic between my computer and the Windows 10 VM (This traffic remained active even when I was not typing or clicking anything). 
-
-> [!NOTE]
-> This happens because `RDP` constantly sends data to maintain the remote session and display a live view of the remote computer screen. The continuous transmission ensures that any changes on the remote system, such as mouse movements or screen updates, are shown in real time. 
-
-<img width="1151" height="725" alt="image" src="https://github.com/user-attachments/assets/aa932325-279d-4d0e-80fa-2eade25e89de" />
-
-
-<h2>Purpose</h2>
-
-The purpose of this project is to develop a deeper understanding of how network traffic flows within the Azure environment and how security configurations help control and protect that traffic. Within the Azure-based systems, this project allows us to analyze how virtual machines communicate with each other between virtual networks and how security tools, such as Network Security Groups, regulate access and data transmission. This also helps us build practical knowledge of how various protocols function and how network activity can be monitored and observed. Overall, the project provides foundational experience that is essential for effectively managing, securing, and maintaining cloud-based network infrastructures in Microsoft Azure.
+In Wireshark apply a filter to display only RDP related traffic. Type "tcp.port==3389" (RDP uses TCP on port 3389)
+Immeditately notice that there is continuous traffic being displayed in Wireshark. This happens because RDP constantly sends data during a remote session. Any changes on the remote system, such as a screen update or mouse/cursor movement, is shown in real time. 
+<img width="1280" height="483" alt="image" src="https://github.com/user-attachments/assets/f2f6a3d1-7ed5-4752-ae6c-51e05502a461" />
