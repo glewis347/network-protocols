@@ -155,44 +155,10 @@ Using Powershell in Windows-VM, enter the command "ipconfig /renew" to request a
 
 **5. Observing DNS Traffic**
 In Wireshark apply a filter to display only DNS related traffic. Type "DNS" in the filter bar, or you can also type "udp.port==53 || tcp.port==53" (DNS uses UDP & TCP on port 53)
+Using Powershell in Windows-VM, enter the command "nslookup www.google.com" to query the DNS server for IP address of google.com. Observe the DNS traffic in Wireshark:
+<img width="470" height="453" alt="Screenshot 2026-06-08 at 3 30 26 PM" src="https://github.com/user-attachments/assets/c8eb95f4-4591-4601-be8e-1417fc7ff7cc" />
+<img width="1277" height="484" alt="Screenshot 2026-06-08 at 3 30 51 PM" src="https://github.com/user-attachments/assets/a2ae7145-782e-414b-986a-1d37646db7ff" />
 
----
-
-**5. Observing DNS Traffic**
-
-In the Windows 10 VM, I applied a `DNS` filter to view only DNS-related traffic.
-
-<img width="879" height="533" alt="Screenshot 2026-02-24 205139" src="https://github.com/user-attachments/assets/e3ce49c9-4e38-4c8e-8a22-62dd867e4f02" />
-
-<br>
-<br>
-
-**After applying the filter:**
-- Open **Windows PowerShell**
-- Run the command: `nslookup google.com`
-- The DNS server returns IP addresses for **google.com**
-
-- Observe the DNS traffic being shown in Wireshark:
-
-<img width="473" height="342" alt="Screenshot 2026-02-24 205818" src="https://github.com/user-attachments/assets/f6252881-980c-4e05-8a90-52f74e00f078" />
-<img width="1538" height="865" alt="Screenshot 2026-02-24 205837" src="https://github.com/user-attachments/assets/005ce102-9125-4095-b074-77e40418dfdb" />
-
-<br>
-<br>
-
-- Open **Windows PowerShell**
-- Run the command: `nslookup disney.com`
-- The DNS server returns IP addresses for **disney.com**
-
-- Observe the DNS traffic being shown in Wireshark:
-
-> [!NOTE]
-> This demonstrates how DNS is used to translate domain names into IP addresses so computers can communicate with each other over the network.
-
-<img width="470" height="353" alt="Screenshot 2026-02-24 205918" src="https://github.com/user-attachments/assets/80bbe9cc-2918-4ee6-b4fc-846b94ddaed2" />
-<img width="1427" height="984" alt="Screenshot 2026-02-24 205946" src="https://github.com/user-attachments/assets/1673974f-cbb5-407d-b476-4fbb2a0d26b4" />
-
----
 
 **6. Observing RDP Traffic** 
 
