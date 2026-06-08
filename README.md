@@ -29,8 +29,8 @@ You can view that project here:
 
 <h2>High Level Steps</h2>
 
-- Observe ICMP Traffic
-- Configure a Network Security Group
+- Send a ping to the Linux VM in the Vnet and to a public IP address. Use Wireshark to observe the ICMP traffic.
+- Send perpetual pings to the Linux VM and observe ICMP traffic. Configure the Linux VM's Network Security Group to disable incoming ICMP traffic and observe what happens in Wireshark.
 - Observe SSH Traffic
 - Observe DHCP Traffic
 - Observe DNS Traffic
