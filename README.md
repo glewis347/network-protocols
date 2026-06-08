@@ -40,7 +40,7 @@ You can view that project here:
 
 **1. Observing ICMP Traffic**
   
-In the Azure platform, select "Virtual machines" in the menu on the left, then select "Windows-VM". Copy the Public IP address as shown in the image below. Ensure that the Virtual Machines are turned on within Azure before continuing.
+Connect to the Windows-VM. In the Azure platform, select "Virtual machines" in the menu on the left, then select "Windows-VM". Copy the Public IP address as shown in the image below. Ensure that the Virtual Machines are turned on within Azure before continuing.
 
 <img width="1713" height="858" alt="1" src="https://github.com/user-attachments/assets/81211ce2-9d05-41d3-9c51-f2f9da3bb91b" />
 
