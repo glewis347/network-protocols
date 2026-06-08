@@ -148,13 +148,13 @@ Enter basic commands in Powershell (example: hostname) and observe the packets i
 In Wireshark apply a filter to display only DHCP related traffic. Type "DHCP" in the filter bar, or you can also type "udp.port==67 || udp.port==68" (DHCP uses UDP on ports 67 & 68)
 <img width="1141" height="256" alt="image" src="https://github.com/user-attachments/assets/7aa7b4d9-ce0a-466a-af33-ef90d6eb0b8c" />
 
-Using Powershell, enter the command "ipconfig /renew" to request a new IP address from the DHCP server. Observe the traffic in Wireshark and notice the DHCP traffic between the VM and DHCP server during the IP assignment process.
+Using Powershell in Windows-VM, enter the command "ipconfig /renew" to request a new IP address from the DHCP server. Observe the traffic in Wireshark and notice the DHCP traffic between the VM and DHCP server during the IP assignment process.
 <img width="857" height="298" alt="Screenshot 2026-06-08 at 1 29 07 PM" src="https://github.com/user-attachments/assets/9e39365c-65eb-4fc6-ae63-f7ea31d7e144" />
 <img width="1141" height="466" alt="Screenshot 2026-06-08 at 1 29 46 PM" src="https://github.com/user-attachments/assets/2724cbf6-0bf0-4913-955e-941050ffd169" />
 
 
 **5. Observing DNS Traffic**
-
+In Wireshark apply a filter to display only DNS related traffic. Type "DNS" in the filter bar, or you can also type "udp.port==53 || tcp.port==53" (DNS uses UDP & TCP on port 53)
 
 ---
 
