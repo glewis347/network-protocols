@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
-<h1>Network Security Groups (NSGs) and Network Traffic Analysis Between Azure Virtual Machines</h1>
+<h1>Network Security Groups (NSGs) and Network Traffic Examination Between Azure Virtual Machines</h1>
 
 ## Project Overview
  
