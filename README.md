@@ -132,54 +132,29 @@ In Powershell, the perpetual pings have now resumed with a reply from the Linux-
 
 
 **3. Observing SSH Traffic**
+In Wireshark, apply a filter to display only SSH packets. Type "SSH" in the filter bar, or you can also type "tcp.port==22" (SSH uses TCP on port 22)
+<img width="1142" height="259" alt="image" src="https://github.com/user-attachments/assets/34be1e8d-a7d8-4899-ac68-7a2e961ec2f5" />
 
+From the Windows-VM, open Powershell and initiate a SSH connection to the Linux-VM using the command: **ssh labuser@10.0.0.5** 
+Enter the password for Linux-VM to connect, and observe the SSH packet capture in Wireshark:
+<img width="551" height="638" alt="image" src="https://github.com/user-attachments/assets/dbc3d7b5-9fb9-4f8e-bb9d-f889127f0ee5" />
+<img width="1143" height="500" alt="image" src="https://github.com/user-attachments/assets/b094445c-0918-4cb8-b043-2fd3ab3b5283" />
 
+Enter basic commands in Powershell (example: hostname) and observe the packets in Wireshark, which confirms that communication between both VMs is active. Type "exit" and press (Enter) in Powershell to close the SSH connection.
+<img width="517" height="287" alt="Screenshot 2026-06-08 at 1 11 39 PM" src="https://github.com/user-attachments/assets/abd69c20-2963-4853-8e7b-44952f8a4ee3" />
 
-
-
-
-
-
-
-
-**3. Observing SSH Traffic**
-
-I opened Wireshark on the Windows 10 virtual machine and started a packet capture to observe network traffic. Applied the `SSH` filter to display only SSH-related packets.
-  
-<img width="746" height="484" alt="image" src="https://github.com/user-attachments/assets/41e9dc17-1c21-4f78-861f-1005bffa1545" />
-
-<br>
-<br>
-
-From the Windows 10 VM, I initiated an SSH connection to the Ubuntu VM using **PowerShell** with the following command: (**`ssh labuser@172.16.0.5`**). After entering the correct credentials, I successfully connected to the Ubuntu virtual machine.
-  
-<img width="1221" height="566" alt="Screenshot 2026-02-24 202054" src="https://github.com/user-attachments/assets/09d8b753-4c66-44f3-bea7-886af2b5f5cd" />
-
-<br>
-<br>
-
-Once connected, I executed basic commands such as `whoami` and `pwd` within the SSH session. During this time, I observed continuous SSH traffic in Wireshark, confirming that communication between the two systems was active and encrypted. After finishing observing the traffic, I typed `exit` and pressed Enter to close the `SSH` connection.
-
-<img width="1406" height="826" alt="Screenshot 2026-02-24 201620" src="https://github.com/user-attachments/assets/198ba6a0-08b9-4067-b40b-2fecfcac71fe" />
-
-
----
 
 **4. Observing DHCP Traffic**
+In Wireshark apply a filter to display only DHCP related traffic. Type "DHCP" in the filter bar, or you can also type "udp.port==67 || udp.port==68" (DHCP uses UDP on ports 67 & 68)
+<img width="1141" height="256" alt="image" src="https://github.com/user-attachments/assets/7aa7b4d9-ce0a-466a-af33-ef90d6eb0b8c" />
 
-On the Windows 10 VM, I returned to Wireshark and applied a `DHCP` filter to display only DHCP-related traffic
+Using Powershell, enter the command "ipconfig /renew" to request a new IP address from the DHCP server. Observe the traffic in Wireshark and notice the DHCP traffic between the VM and DHCP server during the IP assignment process.
+<img width="857" height="298" alt="Screenshot 2026-06-08 at 1 29 07 PM" src="https://github.com/user-attachments/assets/9e39365c-65eb-4fc6-ae63-f7ea31d7e144" />
+<img width="1141" height="466" alt="Screenshot 2026-06-08 at 1 29 46 PM" src="https://github.com/user-attachments/assets/2724cbf6-0bf0-4913-955e-941050ffd169" />
 
-<img width="960" height="682" alt="Screenshot 2026-02-24 204137" src="https://github.com/user-attachments/assets/5dad524f-8a8f-469f-b5ed-71913330f7e6" />
 
-<br>
-<br>
+**5. Observing DNS Traffic**
 
-After setting the filter, I opened **Windows PowerShell** within the Windows 10 VM and entered the command `ipconfig /renew` to request a new IP address from the DHCP server. While the command was running, `DHCP` traffic appeared in Wireshark (The capture showed the exchange between the client and the DHCP server during the IP assignment process).
-
-> [!NOTE]
-> DHCP dynamically assigns IP addresses and network configuration settings, enabling devices to join a network without manual configuration.
-
-<img width="1242" height="577" alt="Screenshot 2026-02-24 204753" src="https://github.com/user-attachments/assets/41814628-72d3-45a9-a9b2-7b0b100df463" />
 
 ---
 
