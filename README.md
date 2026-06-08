@@ -84,66 +84,36 @@ Ping uses ICMP. I will obtain the Linux-VM private IP address and ping it from w
 
 <img width="855" height="292" alt="11" src="https://github.com/user-attachments/assets/4c49491f-0ae9-4508-921a-87dc327f6712" />
 
-Now let us observe the traffic in Wireshark. Observe that for every packet that was sent, Wiresharks logs a request and a reply, creating 8 lines of observable ICMP traffic:
+Examine the traffic in Wireshark. Observe that for every packet that was sent, Wiresharks logs a request and a reply, creating 8 lines of observable ICMP traffic:
 
 <img width="1141" height="455" alt="12" src="https://github.com/user-attachments/assets/469fa172-f93a-4d47-8f0f-5f0ba623e9ea" />
 
-I will now ping a public website (www.google.com) and observe the results in Wireshark. Observe that each of the 8 lines of ICMP traffic has the IP address for www.google.com
+Ping a public website (www.google.com) and observe the results in Wireshark. Observe that each of the 8 lines of ICMP traffic has the IP address for www.google.com
 
 <img width="446" height="186" alt="13" src="https://github.com/user-attachments/assets/ba9f9d99-0a65-42e7-8a49-d35590675df8" />
 <img width="1141" height="463" alt="14" src="https://github.com/user-attachments/assets/b7039ed7-b500-4b4a-bd40-94b929dec137" />
 
+Configure the Linux-VM's Network Security Group to disable incoming (inbound) ICMP traffic.
+Within Azure's Virtual Machine page, select "Linux-VM" and in the menu on the left select "Networking" then "Network settings". Navigate to the Rules section and select "+ Create port rule" -> "Inbound port rule":
+
+<img width="1674" height="730" alt="1" src="https://github.com/user-attachments/assets/124ef52d-a727-42fd-90c3-48b706bf9129" />
+
+Configure the rule to deny ICMP traffic with the below settings:
+- Source: Any
+- Destination: Any
+- Service: Custom
+- Destination Port:*
+- Protocol: ICMPv4
+- Action: Deny
+- Priority: 290
+- Name: DenyInboundICMP
+Select "Add"
+
+<img width="577" height="814" alt="2" src="https://github.com/user-attachments/assets/e2e991bb-d245-40a7-a0b6-ee2afc64ab95" />
 
 
 
 
-
-
-
-
-<br>
-<br>
-
-Once connected to the Windows 10 VM, I installed and launched Wireshark, started a packet capture, and applied the `ICMP` filter to display only `ICMP` traffic.  
-
-<img width="1812" height="888" alt="image" src="https://github.com/user-attachments/assets/80508f41-8992-4105-828d-9798a3fb27ed" />
-<img width="1886" height="915" alt="image" src="https://github.com/user-attachments/assets/eb959b0f-783c-411d-894a-cd462450668f" />
-
-<br>
-<br>
-
-Applied the `ICMP` filter in Wireshark to only display ICMP traffic.
-
-<img width="1549" height="910" alt="image" src="https://github.com/user-attachments/assets/323c53f5-4739-415c-8b1d-3341100f01c9" />
-
-<br>
-<br>
-
-**Retrieved the private IP address of the Ubuntu VM (linux-vm) and attempted to ping it from within the Windows 10 VM**
-1. Open the Ubuntu VM in Azure
-2. Navigate to the **Overview/Properties tab**
-3. Check under **Networking**
-4. Locate Private IP address (**172.16.0.5**)
-
-<br>
-<br>
-
-**Result**: You successfully found the Ubuntu VM's private IP address
-  
-<img width="1386" height="420" alt="Screenshot 2026-02-24 191138" src="https://github.com/user-attachments/assets/1ea9505d-eedc-4b10-9809-ca031e3f8875" />
-
-<br>
-<br>
-
-Opened **Windows PowerShell** and `ping` the Ubuntu VM's private IP address (**172.16.0.5**) from within the Windows 10 VM.
-While the ping was running on the Windows 10 VM, I observed the `ICMP` request and reply traffic in Wireshark.
-> [!NOTE]
-> Successful ICMP replies confirmed that communication between the Windows and Ubuntu virtual machines was working properly.
-  
-<img width="1902" height="936" alt="image" src="https://github.com/user-attachments/assets/8e2fffb7-5d4c-4480-bd8d-72703a0e6181" />
-
-
----
 
 **2. Configuring a Firewall (Network Security Group)**
  
