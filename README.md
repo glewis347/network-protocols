@@ -162,5 +162,5 @@ Using Powershell in Windows-VM, enter the command "nslookup www.google.com" to q
 
 **6. Observing RDP Traffic** 
 In Wireshark apply a filter to display only RDP related traffic. Type "tcp.port==3389" (RDP uses TCP on port 3389)
-Immeditately notice that there is continuous traffic being displayed in Wireshark. This happens because RDP constantly sends data during a remote session. Any changes on the remote system, such as a screen update or mouse/cursor movement, is shown in real time. 
+Immediately notice that there is continuous traffic being displayed in Wireshark. This happens because RDP constantly sends data during a live remote session. Any changes on the remote system, such as a screen update or mouse/cursor movement, is shown in real time. 
 <img width="1280" height="483" alt="image" src="https://github.com/user-attachments/assets/f2f6a3d1-7ed5-4752-ae6c-51e05502a461" />
